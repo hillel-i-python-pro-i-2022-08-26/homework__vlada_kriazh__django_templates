@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users_app.apps.UsersAppConfig',
     'say_hello.apps.SayHelloConfig',
     'main.apps.MainConfig',
+    'contacts.apps.ContactsConfig'
 ]
 
 MIDDLEWARE = [
@@ -57,8 +58,7 @@ ROOT_URLCONF = 'django_project2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'django_project2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR.joinpath('db', 'db.sqlite3'),
     }
 }
 

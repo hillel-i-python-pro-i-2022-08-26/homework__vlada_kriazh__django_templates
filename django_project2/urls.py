@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('users_generator/', include('users_app.urls')),
-    path('say_hello/', include('say_hello.urls'))
+    path('say_hello/', include('say_hello.urls')),
+    path('contacts/', include('contacts.urls'))
 ]

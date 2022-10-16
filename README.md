@@ -13,3 +13,10 @@
 - /
 - /users_generator/**num**
 - /phones/create_row?name=**name**
+- /contacts/
+
+***Django commands***
+- **Creating N contacts:** python manage.py generate_contacts --amount **N**
+- **Creating 10 contacts:** python manage.py generate_contacts
+- **Deleted 'name':** python manage.py delete_contacts --name '**name**'
+- **Deleted all contacts:** python manage.py delete_contacts
