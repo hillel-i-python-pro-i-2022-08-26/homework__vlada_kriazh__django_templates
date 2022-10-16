@@ -12,7 +12,7 @@
 ***Main routes:***
 - /
 - /users_generator/**num**
-- /phones/create_row?name=**name**
+- /say_hello/?name=**name**
 - /contacts/
 
 ***Django commands***
