@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'users_app.apps.UsersAppConfig',
     'say_hello.apps.SayHelloConfig',
     'main.apps.MainConfig',
-    'contacts.apps.ContactsConfig'
+    'contacts.apps.ContactsConfig',
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'django_project2.urls'
+
+AUTH_USER_MODEL = 'users.User'
 
 TEMPLATES = [
     {
