@@ -2,13 +2,15 @@
 
 ![Main workflow](https://github.com/hillel-i-python-pro-i-2022-08-26/homework__vlada_kriazh__django_templates/actions/workflows/main-workflow.yml/badge.svg)
 
-***Enter to start***
+***Enter to start and migrate***
 > make homework-i-run
 
 ***Enter to purge homework related data***
 > make homework-i-purge
-> 
-> 
+
+***Enter to create admin***
+> init-dev-i-create-superuser
+
 ***Main routes:***
 - /
 - /users_generator/**num**
