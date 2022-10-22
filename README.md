@@ -14,6 +14,7 @@
 - /users_generator/**num**
 - /say_hello/?name=**name**
 - /contacts/
+- /admin
 
 ***Django commands***
 - **Creating N contacts:** python manage.py generate_contacts --amount **N**
