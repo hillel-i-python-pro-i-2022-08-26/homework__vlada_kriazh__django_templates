@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div>
+        <p><a href="{% url 'hello' %}">Main menu</a></p>
+        <p><a href="{% url 'contacts:index' %}">All contacts</a></p>
+        <h2>{{ contact.name }}</h2>
+        <p> <b> Phone number</b> - {{ contact.phone }}</p>
+        <p> <b> Date of birth</b> - {{ contact.date_of_birth }}</p>
+        <p> <b> Date of change</b> - {{ contact.date_of_change }}</p>
+        <p> <b> Date of creation</b> - {{ contact.date_of_creation }}</p>
+        <p><a href="{% url 'contacts:contact_edit' pk=contact.pk %}">Edit</a> &nbsp;
+            <a href="{% url 'contacts:contact_delete' pk=contact.pk %}">Delete</a> </p>
+    </div>
+{% endblock %}

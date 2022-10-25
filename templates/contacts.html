@@ -2,19 +2,32 @@
 
 {% block body %}
     <div>
+        <p><a href="{% url 'hello' %}">Main menu</a></p>
         <h2>Contacts</h2>
+            <p><a href="{% url 'contacts:contact_new' %}">New Contact</a></p>
         <table>
             <tbody>
                 <tr>
-                <td>name</td><td> | phone</td><td> | date_of_birth</td>
-                    <td> | date_of_creation</td><td> | date_of_change</td>
+                <td><b>name</b></td><td><b>phone</b></td>
+{#                    <td> | date_of_birth</td><td> | date_of_creation</td><td> | date_of_change</td>#}
                 </tr>
             {% for contact in contacts %}
                 <tr>
-                <td>{{ contact.name }}</td><td> | {{ contact.phone }}</td><td> | {{ contact.date_of_birth }}</td>
-                    <td> | {{ contact.date_of_creation }}</td><td> | {{ contact.date_of_change }}</td>
+                <td><a href="{% url 'contacts:contact_details' pk=contact.pk%}">{{ contact.name }}</a></td>
+                    <td> {{ contact.phone }}</td>
+{#                    <td> | {{ contact.date_of_birth }}</td>#}
+{#                    <td> | {{ contact.date_of_creation }}</td>#}
+{#                    <td> | {{ contact.date_of_change }}</td>#}
+{#                    <td> &nbsp; <a href="{% url 'contacts:contact_edit' pk=contact.pk %}">Edit</a> </td>#}
+                    <td> &nbsp; <a href="{% url 'contacts:contact_delete' pk=contact.pk %}">Delete</a> </td>
                 </tr>
             {% endfor %}
+
+            {% if messages %}
+                {% for message in messages %}
+                <p align="center">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
             </tbody>
         </table>
     </div>
