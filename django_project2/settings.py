@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'say_hello.apps.SayHelloConfig',
     'main.apps.MainConfig',
     'contacts.apps.ContactsConfig',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'get_sessions_info.apps.GetSessionsInfoConfig'
 ]
 
 MIDDLEWARE = [

@@ -9,7 +9,7 @@
 > make homework-i-purge
 
 ***Enter to create admin***
-> init-dev-i-create-superuser
+> make init-dev-i-create-superuser
 
 ***Main routes:***
 - /
@@ -17,6 +17,7 @@
 - /say_hello/?name=**name**
 - /contacts/
 - /admin
+- /sessions/
 
 ***Django commands***
 - **Creating N contacts:** python manage.py generate_contacts --amount **N**
