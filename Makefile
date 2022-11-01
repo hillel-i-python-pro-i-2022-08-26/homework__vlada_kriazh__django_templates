@@ -1,8 +1,8 @@
 .PHONY: homework-i-run
 # Run homework.
 homework-i-run:
-		python manage.py runserver
-
+	@python manage.py migrate && \
+	python manage.py runserver
 
 .PHONY: homework-i-purge
 # Delete all created artifacts, related with homework execution
@@ -27,3 +27,13 @@ pre-commit-run:
 # Run tools for all files.
 pre-commit-run-all:
 	@pre-commit run --all-files
+
+.PHONY: migrations
+# Make migrations
+migrations:
+	@python manage.py makemigrations
+
+.PHONY: migrate
+# Migrate
+migrate:
+	@python manage.py migrate

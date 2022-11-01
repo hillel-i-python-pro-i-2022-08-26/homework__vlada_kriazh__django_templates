@@ -2,3 +2,5 @@
 .venv/
 
 db.sqlite3
+.run_generate_contacts
+db/db.sqlite3
