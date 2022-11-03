@@ -1,0 +1,16 @@
+# Ignore all
+**
+
+# Exclude
+!docker/app
+!contacts
+!django_project2
+!get_sessions_info
+!main
+!say_hello
+!templates
+!users
+!users_app
+!Makefile
+!manage.py
+!requirements.txt
