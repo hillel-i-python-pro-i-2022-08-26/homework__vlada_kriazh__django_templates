@@ -20,13 +20,21 @@ d-homework-i-run:
 d-homework-i-purge:
 	@make d-purge
 
-
 .PHONY: d-run
 # Just run
 d-run:
 	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
+		COMPOSE_PROFILES=full_dev \
 		docker-compose \
 			up --build
+
+.PHONY: d-run-i-local-dev
+# Local run
+d-run-i-local-dev:
+	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
+		COMPOSE_PROFILES=local_dev \
+			docker-compose \
+				up --build
 
 
 .PHONY: d-purge
@@ -39,7 +47,8 @@ d-purge:
 .PHONY: init-config
 # Init config files
 init-config:
-	@cp docker-compose.override.dev.yml docker-compose.override.yml
+	@cp docker-compose.override.dev.yml docker-compose.override.yml && \
+		cp .env.example .env
 
 
 .PHONY: init-dev
