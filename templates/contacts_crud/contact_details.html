@@ -2,7 +2,6 @@
 
 {% block body %}
     <div>
-        <p><a href="{% url 'hello' %}">Main menu</a></p>
         <p><a href="{% url 'contacts:index' %}">All contacts</a></p>
         <h2>{{ contact.name }}</h2>
         <p> <b> Phone number</b> - {{ contact.phone }}</p>
