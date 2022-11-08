@@ -2,7 +2,6 @@
 
 {% block body %}
     <div>
-        <p><a href="{% url 'contacts:index' %}">All contacts</a></p>
         <h2>{{ contact.name }}</h2>
         <p> <b> Phone number</b> - {{ contact.phone }}</p>
         <p> <b> Date of birth</b> - {{ contact.date_of_birth }}</p>

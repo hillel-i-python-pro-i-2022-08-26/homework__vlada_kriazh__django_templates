@@ -1,0 +1,28 @@
+.my-header{
+    display: flex;
+    flex-flow: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 3em;
+    height: 3em;
+}
+
+.my-style-1 {
+    border: 1px solid blue;
+    width: fit-content;
+    border-radius: 4px;
+
+    margin: 1em;
+    padding: 0.2em;
+
+    background: rgba(158, 196, 245, 0.21);
+}
+
+.my-style-2 {
+    margin: 1em;
+    padding: 0.2em;
+}
