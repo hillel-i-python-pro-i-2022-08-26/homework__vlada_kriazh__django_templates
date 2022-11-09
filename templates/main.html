@@ -1,7 +1,6 @@
-{% extends 'base.html' %}
+{#{% extends 'base.html' %}#}
 
 {% block body %}
-    <p>Hello!<p>
     <ul>
         <li>
             <a href="{% url 'users_generator:index' amount=10 %}">Generate users data</a>
@@ -10,7 +9,10 @@
             <a href="{% url 'say_hello:index' %}">Say "Hello"</a>
         </li>
         <li>
-        <a href="{% url 'contacts:index' %}">Print Contacts</a>
+        <a href="{% url 'contacts:index' %}"> Contacts</a>
+        </li>
+        <li>
+        <a href="{% url 'sessions:index' %}"> Session</a>
         </li>
     </ul>
 {% endblock %}

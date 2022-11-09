@@ -21,5 +21,6 @@ urlpatterns = [
     path('', include('main.urls')),
     path('users_generator/', include('users_app.urls')),
     path('say_hello/', include('say_hello.urls')),
-    path('contacts/', include('contacts.urls'))
+    path('contacts/', include('contacts.urls')),
+    path('sessions/', include('get_sessions_info.urls')),
 ]

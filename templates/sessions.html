@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div>
+        <h2>Sessions</h2>
+        <p>
+            <span>Session id: </span>
+            <span>{{ session_id }}</span>
+        </p>
+        <p>
+            <span>Last visit's datetime: </span>
+            <span>{{ session_datetime }}</span>
+        </p>
+        <p>
+            <span>Count of visits: </span>
+            <span>{{ count_of_visits }}</span>
+        </p>
+    </div>
+{% endblock %}

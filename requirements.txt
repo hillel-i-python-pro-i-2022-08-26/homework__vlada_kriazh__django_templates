@@ -13,3 +13,8 @@ Django==4.1.2
 webargs == 8.2.0
 
 faker==15.1.1
+
+# For environment variables and config.
+django-environ==0.9.0
+# For DB connection.
+psycopg2-binary==2.9.5
