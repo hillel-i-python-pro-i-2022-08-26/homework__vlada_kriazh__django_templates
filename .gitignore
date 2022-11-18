@@ -8,3 +8,6 @@ db/db.sqlite3
 docker-compose.override.yml
 
 .env
+
+media/*
+!media/.gitkeep
