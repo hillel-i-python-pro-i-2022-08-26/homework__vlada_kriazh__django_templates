@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div>
+        <h2>Contacts</h2>
+            <p><a href="{% url 'contacts:contact_new' %}">
+                <button type="button" class="btn btn-outline-success">
+                    New Contact
+                </button>
+            </a></p>
+        <table class="table">
+            <thead>
+                <tr>
+                <th><b>avatar</b></th>
+                <th><b>name</b></th>
+                <th><b>phone</b></th>
+                <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for contact in object_list %}
+
+                <tr>
+                <td>
+                    {% if contact.avatar %}
+                    <img class="contact-avatar" src="{{ contact.avatar.url }}" alt="{{ contact.name }}">
+                    {% endif %}
+                </td>
+
+                <td><a href="{% url 'contacts:contact_details' pk=contact.pk%}">{{ contact.name }}</a></td>
+                    <td> {{ contact.phone }}</td>
+                    <td> &nbsp; <a href="{% url 'contacts:contact_delete' pk=contact.pk %}">
+                    <button type="button" class="btn btn-outline-danger">
+                        Delete
+                    </button>
+                    </a> </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
+
+
+{#{% block body %}#}
+{##}
+{#    <div>#}
+{#        <h2>Contacts</h2>#}
+{#            <p><a href="{% url 'contacts:contact_new' %}">#}
+{#                <button type="button" class="btn btn-outline-success">#}
+{#                    New Contact#}
+{#                </button>#}
+{#            </a></p>#}
+{#            <ol class="my-style-1">#}
+{#            {% for contact in object_list %}#}
+{##}
+{#                <li>#}
+{#                    <div>#}
+{#                        <div class="col">#}
+{#                            <span>#}
+{#                            {% if contact.avatar %}#}
+{#                                <img style="max-width: 5em" src="{{ contact.avatar.url }}" alt="{{ contact.name }}" />#}
+{#                            {% endif %}#}
+{#                            </span>#}
+{#                            <span><a href="{% url 'contacts:contact_details' pk=contact.pk%}">{{ contact.name }}</a></span>#}
+{#                            <span> {{ contact.phone }}</span>#}
+{#                            <span> &nbsp; <a href="{% url 'contacts:contact_delete' pk=contact.pk %}">#}
+{#                            <button type="button" class="btn btn-outline-danger">#}
+{#                                Delete#}
+{#                            </button>#}
+{#                            </a> </span>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </li>#}
+{#            {% endfor %}#}
+{#            </ol>#}
+{#    </div>#}
+{#{% endblock %}#}

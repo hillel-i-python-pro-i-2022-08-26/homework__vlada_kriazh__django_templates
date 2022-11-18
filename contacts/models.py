@@ -1,6 +1,9 @@
+import uuid
+
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 
 
 def validate_phone(value):
@@ -20,6 +23,11 @@ class Group(models.Model):
     __repr__ = __str__
 
 
+def get_icon_path(instance, filename) -> str:
+    _, extension = filename.rsplit('.', maxsplit=1)
+    return f'contacts/avatar/{instance.pk}/{uuid.uuid4()}/avatar.{extension}'
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=10, validators=[validate_phone])
@@ -31,6 +39,14 @@ class Contact(models.Model):
                               related_name='contacts',
                               on_delete=models.CASCADE,
                               default=None, blank=True, null=True)
+    avatar = models.ImageField(
+        blank=True,
+        null=True,
+        upload_to=get_icon_path
+    )
+
+    def get_absolute_url(self):
+        return reverse('contacts:contact_edit', kwargs={'pk': self.pk})
 
     def __str__(self) -> str:
         return f"{self.name} - {self.phone}"
