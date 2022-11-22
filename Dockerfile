@@ -40,6 +40,8 @@ COPY --chown=${USER} ./users_app users_app
 COPY --chown=${USER} ./Makefile Makefile
 COPY --chown=${USER} ./manage.py manage.py
 
+COPY --chown=${USER} ./static static
+
 RUN mkdir "db"
 
 # переключение на пользователя

@@ -11,6 +11,7 @@
 !templates
 !users
 !users_app
+!static
 !Makefile
 !manage.py
 !requirements.txt
