@@ -20,7 +20,7 @@ from contacts.models import Contact
 #     )
 
 
-class ArticleListView(ListView):
+class ContactListView(ListView):
     model = Contact
 
 

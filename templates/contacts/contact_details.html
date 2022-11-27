@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}Contact Details{% endblock title %}
+
 {% block body %}
-    <div>
+    <div style="margin: 1em">
         <h2>{{ contact.name }}</h2>
         <div>
             {% if contact.avatar %}

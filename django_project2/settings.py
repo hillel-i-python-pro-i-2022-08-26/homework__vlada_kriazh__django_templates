@@ -44,6 +44,7 @@ if DEBUG:
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,7 +76,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'django_project2.urls'
 
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = "users.User"
 
 TEMPLATES = [
     {
@@ -159,3 +160,8 @@ MEDIA_ROOT = BASE_DIR.joinpath("media")
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/accounts/login/'
+
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 30

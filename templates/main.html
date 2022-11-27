@@ -1,23 +1,9 @@
-{#{% extends 'base.html' %}#}
-{% load static %}
+{% extends 'base.html' %}
 
-<header class="my-header">
+{% block title %}Main Page{% endblock title %}
+
+{% block body %}
     <div>
-    <img class="logo" src="{% static "images/logo.svg" %}"/>
+        Hello! {{ request.user }}
     </div>
-
-    <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'users_generator:index' amount=10 %}">Generate users data</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'say_hello:index' %}">Say "Hello"</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'contacts:index' %}"> Contacts</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'sessions:index' %}"> Session</a>
-        </li>
-    </ul>
-</header>
+{% endblock %}

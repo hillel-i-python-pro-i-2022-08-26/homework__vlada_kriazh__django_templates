@@ -25,6 +25,7 @@ urlpatterns = [
     path('say_hello/', include('say_hello.urls')),
     path('contacts/', include('contacts.urls')),
     path('sessions/', include('get_sessions_info.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile Page{% endblock title %}
+
+{% block body %}
+    <div class="row my-3 p-3">
+        <h1>This is the profile page for {{user.username}}</h1>
+    </div>
+
+{#    <div style="margin: 5em">#}
+{#        <ol>#}
+{#            <p align="center"><strong>Hello! {{ request.user }}</strong></p>#}
+{#        </ol>#}
+{#    </div>#}
+{% endblock %}
