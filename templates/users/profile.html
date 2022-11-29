@@ -6,10 +6,14 @@
     <div class="row my-3 p-3">
         <h1>This is the profile page for {{user.username}}</h1>
     </div>
-
-{#    <div style="margin: 5em">#}
-{#        <ol>#}
-{#            <p align="center"><strong>Hello! {{ request.user }}</strong></p>#}
-{#        </ol>#}
-{#    </div>#}
+    <div  style="margin-left: 2em">
+        <div>
+            {% if user.avatar %}
+                <img class="user-avatar" src="{{ user.avatar.url }}" alt="{{ user.name }}">
+            {% endif %}
+        </div>
+        <div>
+            <a href="{% url 'accounts:profile_edit' pk=user.pk%}">Edit profile</a>
+        </div>
+    </div>
 {% endblock %}

@@ -41,7 +41,7 @@
     <ul class="nav justify-content-end">
         {% if user.is_authenticated %}
             <li class="nav-item">
-            <a class="nav-link active" href="{% url 'accounts:profile' %}" >Profile</a>
+            <a class="nav-link active" href="{% url 'accounts:profile' %}" >{{ request.user }}</a>
             </li>
             <li class="nav-item">
             <a class="nav-link active" href="{% url 'accounts:logout' %}" >Logout</a>
@@ -67,6 +67,9 @@
 {% endif %}
 
 {% block body %}
+    <div>
+        Hello! {{ request.user }}
+    </div>
 {% endblock %}
 
 <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>

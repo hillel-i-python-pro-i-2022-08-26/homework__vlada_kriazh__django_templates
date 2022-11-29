@@ -6,7 +6,7 @@ def index(request: HttpRequest) -> HttpResponse:
     # return render(request, 'base.html')
     return render(
         request,
-        'main.html',
+        'base.html',
         {'request': request}
     )
 
