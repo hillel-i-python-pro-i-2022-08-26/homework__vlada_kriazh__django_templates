@@ -30,6 +30,7 @@ COPY --chown=${USER} --chmod=755 ./docker/app/entrypoint.sh /entrypoint.sh
 
 # копирование файлов
 COPY --chown=${USER} ./contacts contacts
+COPY --chown=${USER} ./accounts accounts
 COPY --chown=${USER} ./django_project2 django_project2
 COPY --chown=${USER} ./get_sessions_info get_sessions_info
 COPY --chown=${USER} ./main main

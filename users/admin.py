@@ -1,5 +1,19 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
 from . import models
 
-admin.site.register(models.User, UserAdmin)
+
+# class MyUser(UserAdmin):
+#     add_form = UserRegistrationForm
+#     form = UserRegistrationForm
+#     model = get_user_model()
+#     list_display = ['email', 'password']
+#
+#
+# admin.site.register(models.User, UserAdmin)
+
+
+admin.site.register(models.User)
+
+
+class ContactInline(admin.TabularInline):
+    model = models.User

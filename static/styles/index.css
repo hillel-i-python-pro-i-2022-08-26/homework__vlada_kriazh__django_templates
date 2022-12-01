@@ -26,6 +26,10 @@
     max-width: 5em;
 }
 
+.user-avatar{
+    max-width: 15em;
+}
+
 .table {
 	width: 100%;
 	margin-bottom: 20px;

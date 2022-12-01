@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Edit Profile{% endblock title %}
+
+{% block body %}
+
+    <form style="margin: 1em" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+                {{ form|crispy }}
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">Update</button>
+    </form>
+
+{% endblock %}
