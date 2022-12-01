@@ -1,5 +1,5 @@
 import logging
-from django.core.management import BaseCommand, CommandParser
+from django.core.management import BaseCommand
 from middleware_example import models
 
 

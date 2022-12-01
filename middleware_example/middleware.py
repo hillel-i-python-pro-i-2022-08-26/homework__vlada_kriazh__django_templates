@@ -14,7 +14,7 @@ def update_or_create_request_data(path, user, session_key):
     values_for_update = {"path": path, "user": user,
                          "session_key": session_key, "count_of_visits": count_of_visits_new}
     data_object, created = RequestData.objects.update_or_create(key=f'{path}-{user}-{session_key}',
-                                                                defaults=values_for_update)
+                                                                defaults=values_for_update,)
     return f'{data_object}, is created: {created}'
 
 
