@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Request Info{% endblock title %}
+
+{% block body %}
+    <div style="margin: 2em">
+         {% if middleware is True %}
+                <p><a href="{% url 'middleware:index' %}">All request data </a></p>
+                <p><a href="{% url 'middleware:user_data' %}">Request data for user </a></p>
+                <p><a href="{% url 'middleware:session_data' %}">Request data for session</a></p>
+            </div>
+            {% if amount_of_page %}
+                <h2 style="margin: 1em">By {{ filter_by }}</h2>
+                <div style="margin: 2em">
+                    <p>Total amount of visiting page: {{ amount_of_page }}</p>
+                    <p>Total amount of request: {{ amount_of_requests }}</p>
+                </div>
+            {% endif %}
+
+            <div style="margin: 2em">
+                <table>
+                    <tbody>
+                        <tr>
+                        <td>path</td><td> | user</td><td> | session_key</td>
+                            <td> | count_of_visits</td><td> | last_visit_date</td>
+                        </tr>
+                    {% for row in data %}
+                        <tr>
+                        <td>{{ row.path }}</td><td> | {{ row.user }}</td><td> | {{ row.session_key }}</td>
+                            <td> | {{ row.count_of_visits }}</td><td> | {{ row.last_visit_date }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+         {% else %}
+             <p>Middleware is off</p>
+         {% endif %}
+    </div>
+{% endblock %}

@@ -15,5 +15,5 @@ from . import models
 admin.site.register(models.User)
 
 
-class ContactInline(admin.TabularInline):
+class UserInline(admin.TabularInline):
     model = models.User
