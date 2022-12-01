@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'get_sessions_info.apps.GetSessionsInfoConfig',
     "crispy_forms",
     "crispy_bootstrap5",
+    "middleware_example.apps.MiddlewareExampleConfig"
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -72,7 +73,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'middleware_example.middleware.SimpleLoggingMiddleware',
 ]
+
+INIT_INFO_MIDDLEWARE = True
+
+if INIT_INFO_MIDDLEWARE:
+    MIDDLEWARE.extend(
+        [
+            env.str("INFO_MIDDLEWARE"),
+        ],
+    )
 
 ROOT_URLCONF = 'django_project2.urls'
 
@@ -137,7 +148,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 

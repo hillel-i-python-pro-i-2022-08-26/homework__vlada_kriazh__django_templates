@@ -5,6 +5,7 @@
 !docker/app
 !contacts
 !accounts
+!middleware_example
 !django_project2
 !get_sessions_info
 !main
